@@ -9,10 +9,11 @@ python lang_frequency.py <путь_до_текстового_файла>
 
 ## Пример запуска (на Windows):
 ```cmd
-C:\>C:\Python\python.exe C:\5_lang_frequency\lang_frequency.py C:\5_lang_frequency\test1.txt
+C:\>C:\Python\python.exe C:\5_lang_frequency\lang_frequency.py C:\5_lang_frequency\test2.txt
 
-Five most frequent words:  [('чаще', 3), ('а', 2), ('пишу', 2), ('других', 2), ('повторяется', 2)]
+Ten most frequent words:  [('в', 122), ('на', 87), ('и', 52), ('года', 49), ('группы', 34), ('альбом', 33), ('не', 28), ('альбома', 25), ('с', 25), ('группа', 22)]
 ```
+
 
 Запуск на Linux производится аналогично.
 
