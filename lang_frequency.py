@@ -14,13 +14,13 @@ def load_data(file_path):
 
 def get_most_frequent_words(input_text):
     words = re.findall(r'\w+', input_text.lower())
-    five_most_freq_words = collections.Counter(words).most_common(10)
-    return five_most_freq_words
+    most_freq_words = collections.Counter(words).most_common(10)
+    return most_freq_words
 
 
 if __name__ == '__main__':
 	if len(sys.argv) > 1 and os.path.exists(sys.argv[1]):
 		path_to_file = sys.argv[1]
-		print ('Five most frequent words: ', get_most_frequent_words(load_data(path_to_file)))
+		print ('Ten most frequent words: ', get_most_frequent_words(load_data(path_to_file)))
 	else:
 		sys.exit('You forget enter path or file does not exist')
