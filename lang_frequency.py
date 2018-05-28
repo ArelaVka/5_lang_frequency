@@ -1,4 +1,7 @@
 import re
+import sys
+import os
+import collections
 
 
 def load_data(file_path):
@@ -11,15 +14,13 @@ def load_data(file_path):
 
 def get_most_frequent_words(input_text):
     words = re.findall(r'\w+', input_text.lower())
-    print(words)
-    #Counter(words).most_common(5)
-    #clear_list_data = input_text.replace('.', '').replace(',', '').split()
-    #for word in clear_list_data:
-    #print('Слово (', word, ') встречается ', clear_list_data.count(word), ' раз(а).')
+    five_most_freq_words = collections.Counter(words).most_common(5)
+    return five_most_freq_words
+
 
 if __name__ == '__main__':
-    path_to_file = 'test1.txt'
-    if load_data(path_to_file):
-        get_most_frequent_words(load_data(path_to_file))
-    else:
-        print('No such file')
+	if len(sys.argv) > 1 and os.path.exists(sys.argv[1]):
+		path_to_file = sys.argv[1]
+		print ('Five most frequent words: ', get_most_frequent_words(load_data(path_to_file)))
+	else:
+		sys.exit('You forget enter path or file does not exist')
