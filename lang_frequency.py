@@ -21,7 +21,8 @@ def get_most_frequent_words(input_text, count_of_words):
 if __name__ == '__main__':
     if len(sys.argv) > 1 and os.path.exists(sys.argv[1]):
         path_to_file = sys.argv[1]
+        words_to_print = 10
         print ('Ten most frequent words: ',
-               get_most_frequent_words(load_data(path_to_file), 10))
+               get_most_frequent_words(load_data(path_to_file), words_to_print))
     else:
         sys.exit('You forget enter path or file does not exist')
