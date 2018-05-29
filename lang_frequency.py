@@ -27,7 +27,7 @@ if __name__ == '__main__':
         place_in_rating = 1
         for every_word in top_words:
             print('{0} - place is word "{1}" (count-{2})'.format(
-                i, every_word[0], every_word[1]))
+                place_in_rating, every_word[0], every_word[1]))
             place_in_rating += 1
     else:
         sys.exit('You forget enter path or file does not exist')
