@@ -22,7 +22,12 @@ if __name__ == '__main__':
     if len(sys.argv) > 1 and os.path.exists(sys.argv[1]):
         path_to_file = sys.argv[1]
         words_to_print = 10
-        print ('Ten most frequent words: ',
-               get_most_frequent_words(load_data(path_to_file), words_to_print))
+        top_words = get_most_frequent_words(
+            load_data(path_to_file), words_to_print)
+        i = 1
+        for every_word in top_words:
+            print('{0} - place is word "{1}" (count-{2})'.format(
+                i, every_word[0], every_word[1]))
+            i += 1
     else:
         sys.exit('You forget enter path or file does not exist')
