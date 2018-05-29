@@ -9,11 +9,11 @@ def load_data(file_path):
         with open(file_path, 'r') as opened_file:
             return opened_file.read()
     except ValueError:
-        return False
+        return None
 
 
-def get_most_frequent_words(input_text, count_of_words):
-    words = re.findall(r'\w+', input_text.lower())
+def get_most_frequent_words(text, count_of_words):
+    words = re.findall(r'\w+', text.lower())
     most_freq_words = collections.Counter(words).most_common(count_of_words)
     return most_freq_words
 
